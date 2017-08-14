@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>drop file sample</title>
+  <script src="https://www.google.com/jsapi"></script>
+  <script>
+    google.load('visualization','1.0',{'packages':['corechart']});
+    google.setOnLoadCallback(drawChart);
+    
+    function drawChart(){
+      //データ用意
+      //グラフオプション
+      //描画
+      var data = new google.visualization.DataTable();
+      data.addColumn('string','act');
+      data.addColumn('number','time');
+      data.addRows([['sleep',12],['job',8]]);
+      
+      var options = {
+        title : 'active',
+        height : 500,
+        width : 500
+     }
+      
+          var chart = new google.visualization.PieChart(document.getElementById('chart'));
+    chart.draw(data,options);
+          
+          
+    }
+  </script>
+</head>
+<body>
+<div id="chart"></div>
+  
+</body>
+</html>
